@@ -32,7 +32,7 @@ public class Main {
         }
     }
 
-    // Converts monthly statistics into CSV lines
+
     private static List<String> convertMonthlyStatsToCSV(Map<String, Map<String, Double>> monthlyStats) {
         List<String> data = new ArrayList<>();
         data.add("sensor_type,month,avg_value,max_value,min_value");
@@ -46,7 +46,7 @@ public class Main {
         return data;
     }
 
-    // Converts detected outliers into CSV lines
+
     private static List<String> convertOutliersToCSV(List<SensorReading> sensorData, Map<String, Threshold> thresholds) {
         List<String> data = new ArrayList<>();
         data.add("date,sensor_type,value,unit,location_id,threshold_exceeded");
