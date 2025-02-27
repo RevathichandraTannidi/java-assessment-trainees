@@ -3,7 +3,7 @@ package main.java.com.atyeti.project.data;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class SensorReading {
+public class Sensordata {
     private LocalDateTime date;
     private String sensorType;
     private double value;
@@ -12,7 +12,7 @@ public class SensorReading {
 
     private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    public SensorReading(String date, String sensorType, double value, String unit, String locationId) {
+    public Sensordata(String date, String sensorType, double value, String unit, String locationId) {
         try {
             this.date = LocalDateTime.parse(date.trim(), FORMAT);
             this.sensorType = sensorType;
@@ -20,7 +20,7 @@ public class SensorReading {
             this.unit = unit;
             this.locationId = Integer.parseInt(locationId);
         } catch (Exception e) {
-            throw new IllegalArgumentException("Invalid data format: " + date);
+            throw new IllegalArgumentException("Invalid data format of the csv time and date: " + date);
         }
     }
 
